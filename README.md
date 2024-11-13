@@ -5,6 +5,9 @@ A zebar config inspired by the other various TUI based themes
 >
 > This configuration is still very much WIP. The look may change quite drastically in future updates
 
+## Showcase
+![](./misc/bar.png)
+
 ## Acknowledgments
 [Neobrutal Zebar](https://github.com/adriankarlen/neobrutal-zebar): For the framework setup
 
