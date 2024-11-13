@@ -49,6 +49,19 @@ export default {
 			borderWidth: {
 				DEFAULT: 'var(--border-size)'
 			},
+			fontFamily: {
+				mono: [
+					'Inconsolata Nerd Font Mono',
+					'ui-monospace',
+					'SFMono-Regular',
+					'Menlo',
+					'Monaco',
+					'Consolas',
+					'Liberation Mono',
+					'Courier New',
+					'monospace'
+				]
+			},
 			fontWeight: {
 				base: 'var(--font-weight)'
 			},

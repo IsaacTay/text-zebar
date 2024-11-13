@@ -10,6 +10,11 @@
 @import 'tailwindcss/utilities';
 
 @layer base {
+	@font-face {
+		font-family: 'Inconsolata Nerd Font Mono';
+		font-style: normal;
+		src: url('./InconsolataNerdFontMono-Regular.ttf');
+	}
 	body {
 		overflow: hidden;
 	}
