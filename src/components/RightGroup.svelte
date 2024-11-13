@@ -17,6 +17,7 @@
 	};
 
 	let { date, glazewm, network, weather, battery }: RightGroupProps = $props();
+	let battery_symbols = '󰂎󰁺󰁻󰁼󰁽󰁾󰁿󰂀󰂁󰂂󰁹';
 	//<NowPlaying {glazewm} />
 </script>
 
@@ -70,23 +71,17 @@
 		</div>
 	{/if}
 	{#if battery}
+		{@const index = Math.round(battery.chargePercent / 10) * 2}
 		<div>
-			{#if battery.chargePercent > 90}
-				<i class="nf nf-fa-battery_4"></i>
-			{:else if battery.chargePercent > 70}
-				<i class="nf nf-fa-battery_3"></i>
-			{:else if battery.chargePercent > 40}
-				<i class="nf nf-fa-battery_2"></i>
-			{:else if battery.chargePercent > 20}
-				<i class="nf nf-fa-battery_1"></i>
-			{:else}
-				<i class="nf nf-fa-battery_0"></i>
+			{#if battery.isCharging}
+				󰚥
 			{/if}
+			{battery_symbols.slice(index, index + 2)}
 			{Math.round(battery.chargePercent)}%
 		</div>
 	{/if}
-	<div>
+	{#if date}
 		<i class="nf nf-md-clock"></i>
 		{date?.formatted}
-	</div>
+	{/if}
 </div>
