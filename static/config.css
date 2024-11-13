@@ -16,7 +16,7 @@
 	--text: var(--ctp-mocha-text);
 	/* --bg: var(--ctp-mocha-base); */
 	--bg: 0 0% 0%; /* pure black override */
-	--border: var(--ctp-mocha-subtext1);
+	--border: var(--ctp-mocha-overlay1);
 	--ws-base: var(--ctp-mocha-surface1);
 	--ws-base-text: var(--text);
 	--ws-hover: var(--ctp-mocha-surface2);
