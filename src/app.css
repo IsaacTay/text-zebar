@@ -1,0 +1,20 @@
+@import 'https://www.nerdfonts.com/assets/css/webfont.css';
+@import 'https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css';
+@import 'themes/rose-pine.css';
+@import 'themes/catppuccin.css';
+@import 'themes/nord.css';
+@import 'themes/material.css';
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+	body {
+		overflow: hidden;
+	}
+
+	html {
+		font-size: var(--font-size);
+	}
+}

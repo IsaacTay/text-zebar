@@ -1,0 +1,44 @@
+:root {
+	/* sizes */
+	--height: 50px;
+	--bar-margin-y: 0rem;
+	--bar-margin-x: 0rem;
+
+	/* fonts */
+	--font-size: 12px;
+	--font-weight: 500;
+
+	/* border */
+	--border-size: 0.125rem;
+	--radius: 0rem;
+
+	/* colors */
+	--text: var(--ctp-mocha-text);
+	/* --bg: var(--ctp-mocha-base); */
+	--bg: 0 0% 0%; /* pure black override */
+	--border: var(--ctp-mocha-subtext1);
+	--ws-base: var(--ctp-mocha-surface1);
+	--ws-base-text: var(--text);
+	--ws-hover: var(--ctp-mocha-surface2);
+	--ws-hover-text: var(--text);
+	--ws-focused: var(--ctp-mocha-green);
+	--ws-focused-text: var(--ctp-mocha-crust);
+	--ws-displayed: var(--ctp-mocha-mantle);
+	--ws-displayed-text: var(--ws-base-text);
+
+	--icon: var(--rp-love);
+	--memory: var(--rp-iris);
+	--cpu: var(--rp-rose);
+	--cpu-high-usage: var(--rp-love);
+	--battery-good: var(--rp-pine);
+	--battery-mid: var(--rp-gold);
+	--battery-low: var(--rp-love);
+	--focused-process: var(--rp-text);
+	--process: var(--rp-muted);
+	--displayed: var(--rp-text);
+	--tiling-direction: var(--rp-rose);
+	--not-playing: var(--rp-love);
+	--now-playing: var(--rp-pine);
+	--network: var(--rp-text);
+	--weather: var(--rp-text);
+}
