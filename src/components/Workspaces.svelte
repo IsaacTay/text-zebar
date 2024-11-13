@@ -33,8 +33,8 @@
 					? 'displayed'
 					: 'base'}
 			<Button
-				class="bg-zb-ws-{ws_state} text-zb-ws-{ws_state}-text"
-				label={workspace.name}
+				class="bg-zb-ws-{ws_state} text-zb-ws-{ws_state}-text whitespace-break-spaces"
+				label=" {workspace.name} "
 				callback={() => glazewm!.runCommand(`focus --workspace ${workspace.name}`)}
 			/>
 		{/each}
