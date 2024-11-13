@@ -42,7 +42,7 @@
 <div
 	class="zb-height-bar mx-zbx my-zby grid grid-cols-[auto_1fr_auto] items-center bg-transparent font-mono font-base text-zb-text"
 >
-	<Group group="workspaces" class="col-auto justify-self-start">
+	<Group group="workspaces" class="col-auto min-w-32 justify-self-start">
 		<Workspaces glazewm={glazewm!} />
 	</Group>
 	{#if glazewm}
