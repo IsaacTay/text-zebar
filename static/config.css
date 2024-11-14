@@ -1,6 +1,6 @@
 :root {
 	/* sizes */
-	--height: 50px;
+	--height: 60px;
 	--bar-margin-y: 0rem;
 	--bar-margin-x: 0rem;
 
@@ -9,14 +9,14 @@
 	--font-weight: 500;
 
 	/* border */
-	--border-size: 0.125rem;
+	--border-size: 2px;
 	--radius: 0rem;
 
 	/* colors */
 	--text: var(--ctp-mocha-text);
 	/* --bg: var(--ctp-mocha-base); */
 	--bg: 0 0% 0%; /* pure black override */
-	--border: var(--ctp-mocha-overlay1);
+	--border: var(--ctp-mocha-overlay0);
 	--ws-base: var(--ctp-mocha-surface1);
 	--ws-base-text: var(--text);
 	--ws-hover: var(--ctp-mocha-surface2);
