@@ -9,7 +9,7 @@
 </script>
 
 <button
-	class="flex bg-zb-ws-base text-zb-ws-base-text hover:bg-zb-ws-hover hover:text-zb-ws-hover-text select-none {rest.class}"
+	class="flex select-none bg-zb-ws-base text-zb-ws-base-text hover:bg-zb-ws-hover hover:text-zb-ws-hover-text {rest.class}"
 	onclick={callback}
 	aria-label={label}
 >

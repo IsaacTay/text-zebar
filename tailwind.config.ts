@@ -11,6 +11,7 @@ export default {
 					text: 'hsl( var(--text) / <alpha-value> )',
 					base: 'hsl( var(--bg) / <alpha-value> )',
 					border: 'hsl(var(--border) / <alpha-value> )',
+					border_focused: 'hsl(var(--border_focused) / <alpha-value> )',
 					icon: 'hsl(var(--icon) / <alpha-value> )',
 					memory: 'hsl(var(--memory) / <alpha-value> )',
 					cpu: 'hsl(var(--cpu) / <alpha-value> )',
