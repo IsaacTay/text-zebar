@@ -66,7 +66,7 @@
 		</div>
 	{/if}
 	{#if date}
-    {@const index = +(date.iso.match(/T\d\d:/)[0].slice(1, 3)) * 2}
+    {@const index = +(date.iso.match(/T\d\d:/)[0].slice(1, 3)) % 12 * 2}
     {clock_symbols.slice(index, index+2)}
 		{date?.formatted}
 	{/if}
