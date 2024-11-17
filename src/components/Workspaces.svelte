@@ -29,7 +29,7 @@
 		{#each glazewm.currentWorkspaces as workspace, i}
 			{@const ws_state = workspace.hasFocus
 				? 'focused'
-				: workspace.displayed
+				: workspace.isDisplayed
 					? 'displayed'
 					: 'base'}
 			<Button

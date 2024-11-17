@@ -6,7 +6,6 @@
 		WeatherOutput,
 		DateOutput
 	} from 'zebar';
-	//import NowPlaying from "./NowPlaying.svelte";
 
 	type RightGroupProps = {
 		glazewm: GlazeWmOutput;
@@ -16,39 +15,38 @@
 		date: DateOutput;
 	};
 
-	let { date, glazewm, network, weather, battery }: RightGroupProps = $props();
+	let { glazewm, network, weather, battery, date }: RightGroupProps = $props();
 	let battery_symbols = '󰂎󰁺󰁻󰁼󰁽󰁾󰁿󰂀󰂁󰂂󰁹';
 
-	let weather_symbols = {
+	let weather_symbols: { [id: string]: string }= {
 		clear: '',
 		cloudy: '',
 		light_rain: '󰸊',
-		heavy_rain: '󰖌' ,
+		heavy_rain: '󰖌',
 		thunder: '󱐋',
 		snow: '*'
 	};
-	function get_weather_split(status: string) {
+	function get_weather_split(status: string): [string, string] {
 		const arrStatus = status.split('_');
-		const day_night = arrStatus.pop();
+		const day_night = arrStatus.pop()!;
 		const weather = arrStatus.join('_');
 		return [weather, day_night];
 	}
-	//<NowPlaying {glazewm} />
 </script>
 
 <div class="flex flex-row items-center gap-3">
-  {#if network}
-    <div>
-      {#if network.defaultInterface?.type === 'ethernet'}
-        󰈁
-      {:else if network.defaultInterface?.type === 'wifi'}
-        󰘊
-        {network.defaultGateway?.ssid}
-      {:else}
-        X
-      {/if}
-    </div>
-  {/if}
+	{#if network}
+		<div>
+			{#if network.defaultInterface?.type === 'ethernet'}
+				󰈁
+			{:else if network.defaultInterface?.type === 'wifi'}
+				󰘊
+				{network.defaultGateway?.ssid}
+			{:else}
+				X
+			{/if}
+		</div>
+	{/if}
 	{#if weather}
 		{@const weather_split = get_weather_split(weather.status)}
 		<div>
@@ -67,7 +65,7 @@
 		</div>
 	{/if}
 	{#if date}
-    󱦟
+		󱦟
 		{date?.formatted}
 	{/if}
 </div>

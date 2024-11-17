@@ -1,11 +1,10 @@
 <script lang="ts">
 	type ButtonProps = {
-		iconClass: string;
 		label?: string;
 		callback?: () => void;
 		class: string;
 	};
-	let { iconClass, label, callback, ...rest }: ButtonProps = $props();
+	let { label, callback, ...rest }: ButtonProps = $props();
 </script>
 
 <button
