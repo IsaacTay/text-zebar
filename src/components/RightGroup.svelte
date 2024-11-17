@@ -37,16 +37,18 @@
 </script>
 
 <div class="flex flex-row items-center gap-3">
-	<div class="flex flex-row items-center gap-1">
-		{#if network?.defaultInterface?.type === 'ethernet'}
-			󰈀
-		{:else if network?.defaultInterface!.type === 'wifi'}
-      󰘊
-			{network.defaultGateway?.ssid}
-		{:else}
-			󰤮
-		{/if}
-	</div>
+  {#if network}
+    <div>
+      {#if network.defaultInterface?.type === 'ethernet'}
+        󰈁
+      {:else if network.defaultInterface?.type === 'wifi'}
+        󰘊
+        {network.defaultGateway?.ssid}
+      {:else}
+        X
+      {/if}
+    </div>
+  {/if}
 	{#if weather}
 		{@const weather_split = get_weather_split(weather.status)}
 		<div>
