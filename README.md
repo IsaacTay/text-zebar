@@ -10,6 +10,11 @@ A zebar config inspired by the other various TUI based themes
 
 ![](./misc/bar.png)
 
+## Installation
+
+(From NeoBrutal Zebar)
+Download the `text-zebar.zip` from the latest release. Unzip the contents inside your zebar config directory. Adjust the config.css as needed.
+
 ## Acknowledgments
 
 [Neobrutal Zebar](https://github.com/adriankarlen/neobrutal-zebar): For the framework setup
