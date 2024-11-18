@@ -34,14 +34,14 @@
 	}
 </script>
 
-<div class="flex flex-row items-center gap-3">
+<div class="flex flex-row items-center gap-3 select-none *:flex *:flex-row *:whitespace-pre *:select-none">
 	{#if network}
 		<div>
 			{#if network.defaultInterface?.type === 'ethernet'}
-				󰈁
+				<div class="select-none">󰈁</div>
 			{:else if network.defaultInterface?.type === 'wifi'}
 				󰘊
-				{network.defaultGateway?.ssid}
+				<div class="select-text">{network.defaultGateway?.ssid}</div>
 			{:else}
 				X
 			{/if}
@@ -51,21 +51,18 @@
 		{@const weather_split = get_weather_split(weather.status)}
 		<div>
 			{weather_symbols[weather_split[0]]}
-			{Math.round(weather.celsiusTemp)}°
+			<div class="select-text">{Math.round(weather.celsiusTemp)}°</div>
 		</div>
 	{/if}
 	{#if battery}
 		{@const index = Math.round(battery.chargePercent / 10) * 2}
 		<div>
-			{#if battery.isCharging}
-				󰚥
-			{/if}
-			{battery_symbols.slice(index, index + 2)}
-			{Math.round(battery.chargePercent)}%
+			{#if battery.isCharging}󰚥 {/if}{battery_symbols.slice(index, index + 2)} <div class="select-text">{Math.round(battery.chargePercent)}%</div>
 		</div>
 	{/if}
 	{#if date}
-		󱦟
-		{date?.formatted}
+    <div>
+		  󱦟 <div class="select-text">{date?.formatted}</div>
+    </div>
 	{/if}
 </div>
