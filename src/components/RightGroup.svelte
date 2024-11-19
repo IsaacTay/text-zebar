@@ -57,7 +57,7 @@
 	{#if battery}
 		{@const index = Math.round(battery.chargePercent / 10) * 2}
 		<div>
-			{#if battery.isCharging}󰚥 {/if}{battery_symbols.slice(index, index + 2)} <div class="select-text">{Math.round(battery.chargePercent)}%</div>
+			{#if battery.isCharging}󰚥&nbsp;{/if}{battery_symbols.slice(index, index + 2)} <div class="select-text">{Math.round(battery.chargePercent)}%</div>
 		</div>
 	{/if}
 	{#if date}
