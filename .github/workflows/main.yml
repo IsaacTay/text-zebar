@@ -22,7 +22,8 @@ jobs:
           bun-version: latest
       - run: bun install
       - run: bun run build
-      - run: zip -r text-zebar.zip build/
+      - run: mv build text-zebar
+      - run: zip -r text-zebar.zip text-zebar/
 
       - name: Create Release
         id: create_release

@@ -4,7 +4,9 @@
 		NetworkOutput,
 		BatteryOutput,
 		WeatherOutput,
-		DateOutput
+		DateOutput,
+		CpuOutput,
+		MemoryOutput
 	} from 'zebar';
 
 	type RightGroupProps = {
@@ -13,12 +15,14 @@
 		battery: BatteryOutput;
 		weather: WeatherOutput;
 		date: DateOutput;
+		cpu: CpuOutput;
+		memory: MemoryOutput;
 	};
 
-	let { glazewm, network, weather, battery, date }: RightGroupProps = $props();
+	let { glazewm, network, weather, battery, date, cpu, memory }: RightGroupProps = $props();
 	let battery_symbols = '󰂎󰁺󰁻󰁼󰁽󰁾󰁿󰂀󰂁󰂂󰁹';
 
-	let weather_symbols: { [id: string]: string }= {
+	let weather_symbols: { [id: string]: string } = {
 		clear: '',
 		cloudy: '',
 		light_rain: '󰸊',
@@ -34,7 +38,15 @@
 	}
 </script>
 
-<div class="flex flex-row items-center gap-3 select-none *:flex *:flex-row *:whitespace-pre *:select-none">
+<div
+	class="flex select-none flex-row items-center gap-3 *:flex *:select-none *:flex-row *:whitespace-pre"
+>
+	{#if cpu && cpu.usage > 90}
+		<div class="text-zb-cpu-high">CPU</div>
+	{/if}
+	{#if memory && memory.usage > 90}
+		<div class="text-zb-memory-high">MEM</div>
+	{/if}
 	{#if network}
 		<div>
 			{#if network.defaultInterface?.type === 'ethernet'}
@@ -57,12 +69,13 @@
 	{#if battery}
 		{@const index = Math.round(battery.chargePercent / 10) * 2}
 		<div>
-			{#if battery.isCharging}󰚥&nbsp;{/if}{battery_symbols.slice(index, index + 2)} <div class="select-text">{Math.round(battery.chargePercent)}%</div>
+			{#if battery.isCharging}󰚥&nbsp;{/if}{battery_symbols.slice(index, index + 2)}
+			<div class="select-text">{Math.round(battery.chargePercent)}%</div>
 		</div>
 	{/if}
 	{#if date}
-    <div>
-		  󱦟 <div class="select-text">{date?.formatted}</div>
-    </div>
+		<div>
+			󱦟 <div class="select-text">{date?.formatted}</div>
+		</div>
 	{/if}
 </div>

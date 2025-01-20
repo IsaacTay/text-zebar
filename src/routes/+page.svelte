@@ -6,7 +6,9 @@
 		DateOutput,
 		NetworkOutput,
 		WeatherOutput,
-		BatteryOutput
+		BatteryOutput,
+		CpuOutput,
+		MemoryOutput
 	} from 'zebar';
 
 	import '../app.css';
@@ -19,6 +21,8 @@
 	let battery = $state<BatteryOutput | null>();
 	let weather = $state<WeatherOutput | null>();
 	let date = $state<DateOutput | null>();
+	let cpu = $state<CpuOutput | null>();
+	let memory = $state<MemoryOutput | null>();
 
 	onMount(() => {
 		const providers = zebar.createProviderGroup({
@@ -26,7 +30,9 @@
 			network: { type: 'network' },
 			weather: { type: 'weather' },
 			battery: { type: 'battery' },
-			date: { type: 'date', formatting: 'yyyy.MM.dd EEE HH:mm:ss' }
+			date: { type: 'date', formatting: 'yyyy.MM.dd EEE HH:mm:ss' },
+			cpu: { type: 'cpu' },
+			memory: { type: 'memory' }
 		});
 
 		providers.onOutput(() => {
@@ -35,6 +41,8 @@
 			weather = providers.outputMap.weather;
 			battery = providers.outputMap.battery;
 			date = providers.outputMap.date;
+			cpu = providers.outputMap.cpu;
+			memory = providers.outputMap.memory;
 		});
 	});
 </script>
@@ -61,6 +69,8 @@
 			weather={weather!}
 			battery={battery!}
 			date={date!}
+			cpu={cpu!}
+			memory={memory!}
 		/>
 	</Group>
 </div>
