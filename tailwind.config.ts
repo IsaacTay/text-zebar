@@ -51,6 +51,7 @@ export default {
 			},
 			fontFamily: {
 				mono: [
+					'var(--font-default)',
 					'Inconsolata Nerd Font Mono',
 					'ui-monospace',
 					'SFMono-Regular',

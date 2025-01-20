@@ -11,5 +11,4 @@ changelog:
         - feature
     - title: Other Changes
       labels:
-        - "*"
-
+        - '*'

@@ -5,6 +5,8 @@
 	--bar-margin-x: 0rem;
 
 	/* fonts */
+	--font-default: Inconsolata Nerd Font Mono;
+	/* --font-default: Courier New; */
 	--font-size: 12px;
 	--font-weight: 500;
 
@@ -27,19 +29,6 @@
 	--ws-displayed: var(--ctp-mocha-mantle);
 	--ws-displayed-text: var(--ws-base-text);
 
-	--icon: var(--rp-love);
-	--memory: var(--rp-iris);
-	--cpu: var(--rp-rose);
-	--cpu-high-usage: var(--rp-love);
-	--battery-good: var(--rp-pine);
-	--battery-mid: var(--rp-gold);
-	--battery-low: var(--rp-love);
-	--focused-process: var(--rp-text);
-	--process: var(--rp-muted);
-	--displayed: var(--rp-text);
-	--tiling-direction: var(--rp-rose);
-	--not-playing: var(--rp-love);
-	--now-playing: var(--rp-pine);
-	--network: var(--rp-text);
-	--weather: var(--rp-text);
+	--cpu-high-usage: var(--ctp-mocha-red);
+	--memory-high-usage: var(--ctp-mocha-red);
 }
